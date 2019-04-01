@@ -1,0 +1,38 @@
+{
+  "name": "api-auth",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "build": "rimraf dist && cross-env NODE_ENV=production tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "debug": "cross-env NODE_ENV=development nodemon --config nodemon-debug.json",
+    "prestart": "npm run build",
+    "start": "cross-env NODE_ENV=production node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
+  },
+  "dependencies": {
+    "@modules/health": "file:../../packages/@modules/health",
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/swagger": "^3.0.2",
+    "@utils/bootstrap": "file:../../packages/@utils/bootstrap",
+    "@utils/env": "file:../../packages/@utils/env",
+    "@utils/logger": "file:../../packages/@utils/logger",
+    "cross-env": "^5.2.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.12.2",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
+    "tsconfig-paths": "^3.5.0",
+    "tslint": "^5.14.0",
+    "typescript": "^3.4.1"
+  }
+}

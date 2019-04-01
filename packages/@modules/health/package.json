@@ -1,0 +1,19 @@
+{
+  "name": "@modules/health",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@godaddy/terminus": "^4.1.0",
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/terminus": "^6.0.0",
+    "rxjs": "^6.4.0"
+  }
+}

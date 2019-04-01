@@ -1,0 +1,21 @@
+{
+  "name": "@utils/bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/platform-fastify": "^6.0.5",
+    "@nestjs/swagger": "^3.0.2",
+    "dotenv": "^7.0.0",
+    "fastify-swagger": "^2.3.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0"
+  }
+}
