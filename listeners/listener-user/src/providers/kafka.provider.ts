@@ -25,8 +25,14 @@ export function listen(): Promise<void> {
     try {
       client.on('ready', () => {
         logger.debug('ready?')
-        ensureTopics()
-        receiveMsg()
+        ensureTopics().then(
+          () => {
+            receiveMsg()
+          },
+          err => {
+            reject(err)
+          }
+        )
       })
 
       client.on('error', reject)
@@ -93,16 +99,23 @@ function receiveMsg() {
 
 function ensureTopics() {
   logger.debug('ensureTopics', topics)
-  client.createTopics(
-    topics.map(topic => ({
-      topic,
-      partitions: 1,
-      replicationFactor: 1
-    })),
-    (err, result) => {
-      // nothing
-    }
-  )
+
+  return new Promise((resolve, reject) => {
+    client.createTopics(
+      topics.map(topic => ({
+        topic,
+        partitions: 1,
+        replicationFactor: 1
+      })),
+      (err, result) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve()
+        }
+      }
+    )
+  })
 }
 
 function parseValue(val: string | Buffer) {
