@@ -13,8 +13,8 @@
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
-    "@nestjs/common": "^6.0.5",
-    "@nestjs/core": "^6.0.5",
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
     "@utils/env": "file:../../packages/@utils/env",
     "@utils/logger": "file:../../packages/@utils/logger",
     "agenda": "^2.0.2",

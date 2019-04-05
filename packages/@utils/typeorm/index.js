@@ -1,0 +1,1 @@
+exports.BaseEntity = require('./base-entity').BaseEntity
