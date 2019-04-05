@@ -8,12 +8,12 @@ import { redisConfig } from './redis.config'
 export const ormConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   host: env.PG_HOST,
-  port: 3306,
+  port: parseInt(env.PG_PORT || '5432'),
   username: env.PG_USER,
   password: env.PG_PASSWORD,
   database: env.PG_DB,
-  // synchronize: true,
-  synchronize: false,
+  synchronize: true,
+  // synchronize: false,
   logging: true,
   cache: {
     type: 'ioredis',
