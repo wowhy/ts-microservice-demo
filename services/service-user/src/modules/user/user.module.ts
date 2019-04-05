@@ -5,10 +5,11 @@ import { User } from '../../entities/user.entity'
 
 import { UserController } from './user.controller'
 import { UserService } from './user.service'
+import { eventPublisherProvider } from '../../providers/event-publisher.provider'
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
   controllers: [UserController],
-  providers: [UserService]
+  providers: [UserService, eventPublisherProvider]
 })
 export class UserModule {}

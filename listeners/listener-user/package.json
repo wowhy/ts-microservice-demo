@@ -16,6 +16,7 @@
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
     "@utils/env": "file:../../packages/@utils/env",
+    "@utils/event": "file:../../packages/@utils/event",
     "@utils/logger": "file:../../packages/@utils/logger",
     "cross-env": "^5.2.0",
     "kafka-node": "^4.0.4",
