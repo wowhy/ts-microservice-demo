@@ -1,4 +1,4 @@
-import { KafkaClient, Producer } from 'kafka-node'
+import { KafkaClient, Producer, KeyedMessage } from 'kafka-node'
 
 import { KafkaEventPublisher } from '@utils/event'
 import { logger } from '@utils/logger'
@@ -23,7 +23,7 @@ export const eventPublisherProvider = {
     if (!publisher) {
       publisher = await new Promise((resolve, reject) => {
         producer.on('ready', () => {
-          resolve(new KafkaEventPublisher(producer))
+          resolve(new KafkaEventPublisher(KeyedMessage, producer))
         })
       })
     }

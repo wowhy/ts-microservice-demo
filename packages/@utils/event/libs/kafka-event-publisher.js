@@ -1,8 +1,8 @@
 'use strict'
 Object.defineProperty(exports, '__esModule', { value: true })
-const kafka_node_1 = require('kafka-node')
 class KafkaEventPublisher {
-  constructor(producer) {
+  constructor(KeyedMessage, producer) {
+    this.KeyedMessage = KeyedMessage
     this.producer = producer
   }
   async publish(e) {
@@ -12,8 +12,8 @@ class KafkaEventPublisher {
           {
             topic: e.eventName,
             key: e.aggregateId,
-            messages: [JSON.stringify(e)]
-            // messages: [new kafka_node_1.KeyedMessage(e.aggregateId, JSON.stringify(e))]
+            // messages: [JSON.stringify(e)]
+            messages: [new this.KeyedMessage(e.aggregateId, JSON.stringify(e))]
           }
         ],
         err => {

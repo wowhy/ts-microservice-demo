@@ -1,8 +1,8 @@
-import { Producer, KeyedMessage } from 'kafka-node'
+import { Producer } from 'kafka-node'
 import { IEventPublisher, IEvent } from './interfaces'
 
 export class KafkaEventPublisher implements IEventPublisher {
-  constructor(private producer: Producer) {}
+  constructor(private KeyedMessage, private producer: Producer) {}
 
   async publish(e: IEvent) {
     await new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ export class KafkaEventPublisher implements IEventPublisher {
         [
           {
             topic: e.eventName,
-            messages: [new KeyedMessage(e.aggregateId, JSON.stringify(e))]
+            messages: [new this.KeyedMessage(e.aggregateId, JSON.stringify(e))]
           }
         ],
         err => {
