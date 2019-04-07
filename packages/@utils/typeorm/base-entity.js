@@ -1,7 +1,12 @@
+const uuid = require("uuid");
 const { PrimaryColumn, CreateDateColumn, UpdateDateColumn } = require('typeorm')
 const { ApiModelProperty } = require('@nestjs/swagger')
 
-class BaseEntity {}
+class BaseEntity {
+  constructor() {
+    this.id = uuid.v4();
+  }
+}
 
 Reflect.decorate(
   [

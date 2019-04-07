@@ -13,8 +13,10 @@
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
     "@nestjs/swagger": "^3.0.2",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
-    "typeorm": "^0.2.16"
+    "typeorm": "^0.2.16",
+    "uuid": "^3.3.2"
   },
   "typings": "index.d.ts"
 }
