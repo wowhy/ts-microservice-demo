@@ -17,6 +17,7 @@
     "@modules/health": "file:../../packages/@modules/health",
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
+    "@nestjs/platform-express": "^6.0.0",
     "@nestjs/swagger": "^3.0.2",
     "@nestjs/terminus": "^6.0.0",
     "@utils/bootstrap": "file:../../packages/@utils/bootstrap",

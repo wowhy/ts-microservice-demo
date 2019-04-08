@@ -1,3 +1,4 @@
+import { NestFactory } from '@nestjs/core'
 import { bootstrap } from '@utils/bootstrap'
 
 import { appConfig } from './config/app.config'
@@ -5,7 +6,12 @@ import { appConfig } from './config/app.config'
 import { AppModule } from './app.module'
 import { docsProvider } from './providers/document.providers'
 
-bootstrap(AppModule, {
-  port: appConfig.port,
-  documentProviders: docsProvider
-})
+async function main() {
+  const app = await NestFactory.create(AppModule)
+  await bootstrap(app, {
+    port: appConfig.port,
+    documentProviders: docsProvider
+  })
+}
+
+main()

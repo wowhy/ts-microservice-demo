@@ -1,11 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 
-const { NestFactory } = require('@nestjs/core')
 const { SwaggerModule, DocumentBuilder } = require('@nestjs/swagger')
 
-async function bootstrap(AppModule, options) {
-  const app = await NestFactory.create(AppModule)
+async function bootstrap(app, options) {
   const packageInfo = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'package.json'), 'utf8'))
 
   const document = SwaggerModule.createDocument(
