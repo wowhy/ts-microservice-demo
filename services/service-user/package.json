@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@godaddy/terminus": "^4.1.0",
-    "@modules/health": "file:../../packages/@modules/health",
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
     "@nestjs/platform-fastify": "^6.0.5",

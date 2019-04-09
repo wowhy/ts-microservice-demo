@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
+import { userProxyFactory } from './user-proxy.factory'
 
 @Module({
-  exports: []
+  providers: [userProxyFactory],
+  exports: [userProxyFactory]
 })
-export class ServiceProxyModule {
-  constructor() {}
-}
+export class ServiceProxyModule {}

@@ -1,5 +1,14 @@
-import { HealthModuleRoot, PingCheckService } from '@modules/health'
+import { Module } from '@nestjs/common'
+import { TerminusModule } from '@nestjs/terminus'
+import { PingCheckService } from './ping-check.service'
+import { ServiceProxyModule } from '../service-proxy/service-proxy.module'
 
-export const HealthModule = HealthModuleRoot.forRootAsync({
-  useClass: PingCheckService
+@Module({
+  imports: [
+    TerminusModule.forRootAsync({
+      imports: [ServiceProxyModule],
+      useClass: PingCheckService
+    })
+  ]
 })
+export class HealthModule {}
