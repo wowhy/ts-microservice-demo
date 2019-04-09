@@ -19,7 +19,7 @@
     "@utils/event": "file:../../packages/@utils/event",
     "@utils/logger": "file:../../packages/@utils/logger",
     "cross-env": "^5.2.0",
-    "kafka-node": "^4.0.4",
+    "kafka-node": "^4.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
     "rxjs": "^6.4.0"
