@@ -1,5 +1,3 @@
-import { ModuleRef } from '@nestjs/core'
-
 export interface IEvent {
   id: string
   aggregateId: string
@@ -17,7 +15,7 @@ export interface IEventPublisher {
 }
 
 export interface IHandlerResolver {
-  moduleRef: ModuleRef
+  moduleRef: any
   type: any
 }
 

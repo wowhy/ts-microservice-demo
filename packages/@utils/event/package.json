@@ -11,12 +11,8 @@
   "license": "ISC",
   "typings": "libs/index.d.ts",
   "dependencies": {
-    "@nestjs/common": "^6.0.5",
-    "@nestjs/core": "^6.0.5",
     "@utils/logger": "file:../logger",
     "kafka-node": "^4.0.4",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.4.0",
     "uuid": "^3.3.2"
   }
 }

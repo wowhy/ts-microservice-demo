@@ -20,7 +20,7 @@ async function bootstrap(app, options) {
 
   SwaggerModule.setup(`docs/${packageInfo.name}`, app, document)
 
-  await app.listen(options.port || 3000)
+  await app.listen(options.port || 3000, '0.0.0.0')
 }
 
 exports.bootstrap = bootstrap

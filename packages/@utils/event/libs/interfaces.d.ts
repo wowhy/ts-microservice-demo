@@ -1,4 +1,3 @@
-import { ModuleRef } from '@nestjs/core';
 export interface IEvent {
     id: string;
     aggregateId: string;
@@ -13,7 +12,7 @@ export interface IEventPublisher {
     publish: (e: IEvent) => Promise<void>;
 }
 export interface IHandlerResolver {
-    moduleRef: ModuleRef;
+    moduleRef: any;
     type: any;
 }
 export interface IEventDispatcher {

@@ -11,9 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@godaddy/terminus": "^4.1.0",
-    "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.0.0",
-    "@nestjs/terminus": "^6.0.0",
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/terminus": "^6.1.0",
     "rxjs": "^6.4.0"
   }
 }
