@@ -1,5 +1,5 @@
 {
-  "name": "api-auth",
+  "name": "api-app",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -17,7 +17,6 @@
     "@godaddy/terminus": "^4.1.0",
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
-    "@nestjs/jwt": "^6.0.0",
     "@nestjs/passport": "^6.0.0",
     "@nestjs/platform-fastify": "^6.0.5",
     "@nestjs/swagger": "^3.0.2",
@@ -30,13 +29,14 @@
     "class-validator": "^0.9.1",
     "cross-env": "^5.2.0",
     "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
+    "passport-http-bearer": "^1.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
     "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "@types/node": "^11.12.2",
+    "@types/passport-http-bearer": "^1.0.33",
     "nodemon": "^1.18.3",
     "prettier": "^1.14.2",
     "swagger-axios-codegen": "^0.5.3",
