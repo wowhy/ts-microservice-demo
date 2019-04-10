@@ -4,7 +4,7 @@ WORKDIR /app/services/service-user
 COPY ./packages /app/packages
 COPY ./services/service-user/package.json /app/services/service-user
 
-RUN npm config set registry https://registry.npm.taobao.org && npm install
+RUN npm config set registry https://registry.npm.taobao.org && npm install -g yarn && yarn
 
 COPY . /app
 
