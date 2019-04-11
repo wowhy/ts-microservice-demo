@@ -24,7 +24,7 @@ services:
   api-admin:
     build:
       context: ../../
-      dockerfile: apis/api-auth/Dockerfile
+      dockerfile: apis/api-admin/Dockerfile
     ports:
       - '8002:8002'
     links:
