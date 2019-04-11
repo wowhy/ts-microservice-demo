@@ -25,7 +25,7 @@ export class HttpStrategy extends PassportStrategy(Strategy, 'bearer') {
         return res.data
       } catch (ex) {
         if (ex.response) {
-          if (ex.response.statusCode === 401) {
+          if (ex.response.status === 401) {
             throw new UnauthorizedException()
           } else if (ex.response.data) {
             throw ex.response.data
