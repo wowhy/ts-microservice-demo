@@ -1,5 +1,7 @@
 FROM node:alpine
 
+RUN apk add python make gcc g++
+
 WORKDIR /app/listeners/listener-user
 COPY ./packages /app/packages
 COPY ./listeners/listener-user/package.json /app/listeners/listener-user

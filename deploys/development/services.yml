@@ -1,0 +1,79 @@
+version: '3.5'
+services:
+  api-auth:
+    build:
+      context: ../../
+      dockerfile: apis/api-auth/Dockerfile
+    environment: 
+      - JWT_SECRETKEY=secretkey
+    ports:
+      - '8000:8000'
+    links:
+      - service-user
+
+  api-app:
+    build:
+      context: ../../
+      dockerfile: apis/api-app/Dockerfile
+    ports:
+      - '8001:8001'
+    links:
+      - api-auth
+      - service-user
+
+  api-admin:
+    build:
+      context: ../../
+      dockerfile: apis/api-auth/Dockerfile
+    ports:
+      - '8002:8002'
+    links:
+      - api-auth
+      - service-user
+
+  service-user:
+    build:
+      context: ../../
+      dockerfile: services/service-user/Dockerfile
+    expose: 
+      - 3000
+    external_links:
+      - postgres
+      - redis
+      - kafka
+
+  listener-user:
+    build:
+      context: ../../
+      dockerfile: listeners/listener-user/Dockerfile
+    external_links:
+      - kafka
+    links:
+      - service-user
+
+  scheduler:
+    build:
+      context: ../../
+      dockerfile: scheduler/Dockerfile
+    ports:
+      - '8003:8003'
+    external_links:
+      - mongodb
+
+  worker-user:
+    build:
+      context: ../../
+      dockerfile: workers/worker-user/Dockerfile
+    external_links:
+      - mongodb
+    links:
+      - service-user
+
+networks:
+  default:
+    external: true
+    name: ts_microservice
+  # devellopment_ts_microservice:
+  #   external: true
+  #   alias:
+  #     - ts_microservice

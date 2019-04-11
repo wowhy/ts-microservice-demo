@@ -1,5 +1,7 @@
 FROM node:alpine
 
+RUN apk add python make gcc g++
+
 WORKDIR /app/services/service-user
 COPY ./packages /app/packages
 COPY ./services/service-user/package.json /app/services/service-user
