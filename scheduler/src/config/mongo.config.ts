@@ -1,5 +1,7 @@
+import { env } from '@utils/env'
+
 export const mongoConfig = {
-  address: 'mongodb://127.0.0.1/agenda',
+  address: env.MONGO_ADDRESS,
   options: {
     useNewUrlParser: true
   }

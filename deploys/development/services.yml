@@ -38,16 +38,16 @@ services:
     expose: 
       - 3000
     external_links:
-      - postgres
-      - redis
-      - kafka
+      - ts_microservice_postgres:postgres
+      - ts_microservice_redis:redis
+      - ts_microservice_kafka:kafka
 
   listener-user:
     build:
       context: ../../
       dockerfile: listeners/listener-user/Dockerfile
     external_links:
-      - kafka
+      - ts_microservice_kafka:kafka
     links:
       - service-user
 
@@ -58,14 +58,14 @@ services:
     ports:
       - '8003:8003'
     external_links:
-      - mongodb
+      - ts_microservice_mongodb:mongodb
 
   worker-user:
     build:
       context: ../../
       dockerfile: workers/worker-user/Dockerfile
     external_links:
-      - mongodb
+      - ts_microservice_mongodb:mongodb
     links:
       - service-user
 
@@ -73,7 +73,3 @@ networks:
   default:
     external: true
     name: ts_microservice
-  # devellopment_ts_microservice:
-  #   external: true
-  #   alias:
-  #     - ts_microservice
