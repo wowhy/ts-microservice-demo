@@ -5,6 +5,10 @@ export class UserCreatedHandler implements IEventHandler {
   static topic = 'user.create'
 
   async handle(data: any) {
-    logger.info(data)
+    if (Math.random() * 10 > 7) {
+      
+    } else {
+      throw new Error('random exception')
+    }
   }
 }

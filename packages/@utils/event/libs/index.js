@@ -7,4 +7,5 @@ __export(require("./event-base"));
 __export(require("./kafka-event-publisher"));
 __export(require("./kafka-event-subscriber"));
 __export(require("./simple-event-dispatcher"));
+__export(require("./kafka-msg-failed-handler"));
 //# sourceMappingURL=index.js.map

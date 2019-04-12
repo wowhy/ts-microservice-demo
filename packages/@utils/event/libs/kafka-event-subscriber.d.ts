@@ -1,9 +1,9 @@
-import { ConsumerGroup } from 'kafka-node';
-import { IEventDispatcher, IEvent, IEventSubscriber } from './interfaces';
+import { IEventDispatcher, IEvent, IEventSubscriber, IMsgFailedHandler } from './interfaces';
 export declare class KafkaEventSubscriber implements IEventSubscriber {
-    dispatcher: IEventDispatcher;
     private consumer;
-    constructor(dispatcher: IEventDispatcher, consumer: ConsumerGroup);
+    private dispatcher;
+    private msgFailedHandler;
+    constructor(consumer: any, dispatcher: IEventDispatcher, msgFailedHandler: IMsgFailedHandler);
     subscribe(): Promise<void>;
-    handler(e: IEvent): Promise<void>;
+    handle(e: IEvent): Promise<void>;
 }

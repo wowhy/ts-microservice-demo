@@ -20,7 +20,9 @@ export interface IEventDispatcher {
     dispatch(e: IEvent): Promise<any>;
 }
 export interface IEventSubscriber {
-    dispatcher: IEventDispatcher;
-    subscribe: () => Promise<void>;
-    handler: (e: IEvent) => Promise<any>;
+    subscribe(): Promise<void>;
+    handle(e: IEvent): Promise<any>;
+}
+export interface IMsgFailedHandler {
+    handle(message: any): Promise<void>;
 }

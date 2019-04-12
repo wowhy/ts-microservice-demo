@@ -1,7 +1,7 @@
-import { KafkaClient, ConsumerGroup } from 'kafka-node'
+import { KafkaClient, ConsumerGroup, KeyedMessage, Producer } from 'kafka-node'
 import { ModuleRef } from '@nestjs/core'
 
-import { KafkaEventSubscriber, SimpleEventDispatcher } from '@utils/event'
+import { SimpleEventDispatcher, KafkaEventSubscriber, KafkaMsgFailedHandler } from '@utils/event'
 import { logger } from '@utils/logger'
 
 import { kafkaConfig, topics, consumerConfig } from '../config/kafka.config'
@@ -65,16 +65,26 @@ function receiveMsg() {
     topics
   )
 
-  const subscriber = new KafkaEventSubscriber(dispatcher, consumer)
+  const subscriber = new KafkaEventSubscriber(
+    consumer,
+    dispatcher,
+    new KafkaMsgFailedHandler(
+      KeyedMessage,
+      new Producer(client, {
+        requireAcks: 1
+      })
+    )
+  )
   subscriber.subscribe()
 }
 
 function ensureTopics() {
-  logger.debug('ensureTopics', topics)
+  const allTopcis = topics.concat(topics.map(topic => `error.${topic}`))
+  logger.debug('ensureTopics', allTopcis)
 
   return new Promise((resolve, reject) => {
     client.createTopics(
-      topics.map(topic => ({
+      allTopcis.map(topic => ({
         topic,
         partitions: 1,
         replicationFactor: 1
