@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ts-microservice-demo
+  labels:
+    name: ts-microservice-demo
+    istio-injection: disabled
