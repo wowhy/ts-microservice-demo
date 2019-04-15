@@ -12,8 +12,8 @@ export const ormConfig: TypeOrmModuleOptions = {
   username: env.PG_USER,
   password: env.PG_PASSWORD,
   database: env.PG_DB,
-  // synchronize: true,
-  synchronize: false,
+  synchronize: true,
+  // synchronize: false,
   logging: true,
   cache: {
     type: 'ioredis',

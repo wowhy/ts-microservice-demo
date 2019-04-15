@@ -209,7 +209,7 @@
 "@utils/event@file:../../packages/@utils/event":
   version "1.0.0"
   dependencies:
-    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.0-e5763d4e-1a6f-4d07-976a-50756fa4d40e-1554889028078/node_modules/@utils/logger"
+    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.0-a26381b3-0936-4a02-9020-c4bc38a9f75f-1555309321540/node_modules/@utils/logger"
     kafka-node "^4.0.4"
     uuid "^3.3.2"
 

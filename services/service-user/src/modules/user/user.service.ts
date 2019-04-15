@@ -1,6 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
+import { FilterParamParsed } from '@nestjsx/crud'
 import { RepositoryService } from '@nestjsx/crud/typeorm'
+
+import { createHash, randomBytes } from 'crypto'
 
 import { IEventPublisher } from '@utils/event'
 
@@ -16,9 +19,26 @@ export class UserService extends RepositoryService<User> {
     super(repo)
   }
 
-  async getMany(query, options) {
-    const result = await super.getMany(query, options)
-    await this.eventPublisher.publish(new UserCreatedEvent('1', query))
-    return result
+  async createOne(data: User, params: FilterParamParsed[]): Promise<User> {
+    const user = await super.createOne(data, params)
+    this.eventPublisher.publish(new UserCreatedEvent(user.id, user))
+    return user
+  }
+
+  passwordHash(password, salt) {
+    const md5 = createHash('md5')
+    try {
+      return md5.update(password + salt).digest('hex')
+    } finally {
+      md5.destroy()
+    }
+  }
+
+  generateSalt() {
+    return randomBytes(2).toString('hex')
+  }
+
+  generateNickName() {
+    return randomBytes(2).toString('base64')
   }
 }

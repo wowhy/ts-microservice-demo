@@ -28,6 +28,102 @@ function axios(configs: IRequestConfig): AxiosPromise {
 
 export class UserServiceProxy {
   /**
+   * passwordHash
+   */
+  passwordHash(
+    params: {
+      /**  */
+      getPasswordHashDto: GetPasswordHashDto;
+    } = <any>{},
+    options: IRequestOptions = {}
+  ): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const configs: IRequestConfig = { ...options, method: 'post' };
+      configs.headers = {
+        ...options.headers,
+        'Content-Type': 'application/json'
+      };
+      let url = '/users/password-hash';
+
+      configs.url = url;
+
+      let data = { ...params['getPasswordHashDto'] };
+
+      configs.data = data;
+      axios(configs)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+  /**
+   * generateSalt
+   */
+  generateSalt(
+    params: {
+      /**  */
+      generateSaltDto: GenerateSaltDto;
+    } = <any>{},
+    options: IRequestOptions = {}
+  ): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const configs: IRequestConfig = { ...options, method: 'post' };
+      configs.headers = {
+        ...options.headers,
+        'Content-Type': 'application/json'
+      };
+      let url = '/users/generate-salt';
+
+      configs.url = url;
+
+      let data = { ...params['generateSaltDto'] };
+
+      configs.data = data;
+      axios(configs)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+  /**
+   * generateNickName
+   */
+  generateNickName(
+    params: {
+      /**  */
+      generateNickNameDto: GenerateNickNameDto;
+    } = <any>{},
+    options: IRequestOptions = {}
+  ): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const configs: IRequestConfig = { ...options, method: 'post' };
+      configs.headers = {
+        ...options.headers,
+        'Content-Type': 'application/json'
+      };
+      let url = '/users/generate-nick-name';
+
+      configs.url = url;
+
+      let data = { ...params['generateNickNameDto'] };
+
+      configs.data = data;
+      axios(configs)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+  /**
    * Retrieve many User
    */
   getMany(
@@ -270,6 +366,35 @@ export class UserServiceProxy {
   }
 }
 
+export class GetPasswordHashDto {
+  /**  */
+  password: string;
+
+  /**  */
+  salt: string;
+
+  constructor(data?: any) {
+    if (data) {
+      this['password'] = data['password'];
+      this['salt'] = data['salt'];
+    }
+  }
+}
+
+export class GenerateSaltDto {
+  constructor(data?: any) {
+    if (data) {
+    }
+  }
+}
+
+export class GenerateNickNameDto {
+  constructor(data?: any) {
+    if (data) {
+    }
+  }
+}
+
 export class User {
   /** ID */
   id: string;
@@ -280,15 +405,27 @@ export class User {
   /** 修改时间 */
   updatedAt: string;
 
-  /** 姓名 */
-  name: string;
+  /** 用户名 */
+  userName: string;
+
+  /** 密码 */
+  password: string;
+
+  /** SALT */
+  salt: string;
+
+  /** 昵称 */
+  nickName: string;
 
   constructor(data?: any) {
     if (data) {
       this['id'] = data['id'];
       this['createdAt'] = data['createdAt'];
       this['updatedAt'] = data['updatedAt'];
-      this['name'] = data['name'];
+      this['userName'] = data['userName'];
+      this['password'] = data['password'];
+      this['salt'] = data['salt'];
+      this['nickName'] = data['nickName'];
     }
   }
 }
