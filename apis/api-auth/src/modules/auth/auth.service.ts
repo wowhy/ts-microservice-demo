@@ -11,7 +11,7 @@ export class AuthService {
   async createToken({ userName, password }: CreateTokenDto) {
     const [user] = await this.userServiceProxy.getMany({
       limit: 1,
-      filter: `userName||eq||${userName}`
+      filter: `userName|eq|${userName}`
     } as any)
 
     if (!user) {
