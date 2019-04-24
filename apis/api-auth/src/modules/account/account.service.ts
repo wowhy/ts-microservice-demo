@@ -7,10 +7,9 @@ export class AccountService {
 
   async register(userName: string, rawPassword: string) {
     const [exists] = await this.userServiceProxy.UserService.getMany({
-      id: '',
       filter: `userName||eq||${userName}`,
       limit: 1
-    })
+    } as any)
 
     if (exists) {
       throw new BadRequestException('用户名已被使用，无法注册')
