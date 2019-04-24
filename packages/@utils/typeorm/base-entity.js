@@ -10,7 +10,9 @@ class BaseEntity {
 
 Reflect.decorate(
   [
-    PrimaryColumn(),
+    PrimaryColumn({
+      type: 'uuid'
+    }),
     ApiModelProperty({
       type: 'string',
       required: false,

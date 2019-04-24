@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { UserServiceProxy, serviceOptions } from './proxy/user.proxy'
+import { serviceOptions, UserService, AccessTokenService } from './proxy/user.proxy'
 import { HttpException, ServiceUnavailableException } from '@nestjs/common'
 
 serviceOptions.axios = Axios.create({
@@ -22,9 +22,7 @@ serviceOptions.axios.interceptors.response.use(
   }
 )
 
-export const userProxyFactory = {
-  provide: 'UserServiceProxy',
-  useFactory: () => {
-    return new UserServiceProxy()
-  }
+export class UserServiceProxy {
+  public readonly UserService = new UserService()
+  public readonly AccessTokenService = new AccessTokenService()
 }

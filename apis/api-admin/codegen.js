@@ -2,7 +2,7 @@ const { codegen } = require('swagger-axios-codegen')
 
 try {
   codegen({
-    serviceNameSuffix: 'ServiceProxy',
+    serviceNameSuffix: 'Service',
     methodNameMode: 'operationId',
     remoteUrl: 'http://127.0.0.1:3000/docs/service-user/json',
     outputDir: './src/modules/service-proxy/proxy',

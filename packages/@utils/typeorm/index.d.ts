@@ -3,3 +3,5 @@ export declare class BaseEntity {
   createdAt: Date | string
   updatedAt: Date | string
 }
+
+export function makeRouteOperationId(routes: RoutesOptions): RoutesOptions

@@ -7,7 +7,7 @@ import {
 } from '@nestjs/terminus'
 import { Injectable, Inject } from '@nestjs/common'
 import { HealthCheckError } from '@godaddy/terminus'
-import { UserServiceProxy } from '../service-proxy/proxy/user.proxy'
+import { UserServiceProxy } from '../service-proxy/user-proxy'
 
 @Injectable()
 export class PingCheckService implements TerminusOptionsFactory {
@@ -30,7 +30,7 @@ export class PingCheckService implements TerminusOptionsFactory {
     const res: HealthIndicatorResult = {}
 
     try {
-      await this.userServiceProxy.getMany({ id: '', limit: 1 })
+      await this.userServiceProxy.UserService.getMany({ limit: 1 } as any)
       res['user-service'] = {
         status: 'up'
       }
