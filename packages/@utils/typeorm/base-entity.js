@@ -1,10 +1,10 @@
-const uuid = require('uuid')
+const uuid = require('uuid/v1')
 const { PrimaryColumn, CreateDateColumn, UpdateDateColumn } = require('typeorm')
 const { ApiModelProperty } = require('@nestjs/swagger')
 
 class BaseEntity {
   constructor() {
-    this.id = uuid.v4()
+    this.id = uuid()
   }
 }
 

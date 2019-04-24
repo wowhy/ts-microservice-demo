@@ -1,9 +1,31 @@
-import Axios from 'axios'
+import Axios, { AxiosRequestConfig } from 'axios'
 import { serviceOptions, UserService, AccessTokenService } from './proxy/user.proxy'
 import { HttpException, ServiceUnavailableException } from '@nestjs/common'
+import { appConfig } from '../../config/app.config'
+import * as jwt from 'jsonwebtoken'
+
+function sign(payload: string | Object | Buffer, options?: jwt.SignOptions): string {
+  return jwt.sign(payload, appConfig.jwtSecretKey, options)
+}
 
 serviceOptions.axios = Axios.create({
   baseURL: 'http://service-user:3000'
+})
+
+serviceOptions.axios.interceptors.request.use((config: AxiosRequestConfig & { user?: any }) => {
+  if (config.user) {
+    config.headers['Authorization'] = `Bearer ${sign(config.user)}`
+  } else {
+    config.headers['Authorization'] =
+      'Bearer ' +
+      sign({
+        id: '00000000-0000-0000-0000-00000000000000',
+        userName: 'admin',
+        nickName: 'admin'
+      })
+  }
+
+  return config
 })
 
 serviceOptions.axios.interceptors.response.use(

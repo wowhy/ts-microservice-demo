@@ -1,15 +1,13 @@
 import { Injectable, BadRequestException, UnauthorizedException } from '@nestjs/common'
-import { JwtService } from '@nestjs/jwt'
-import { JwtPayload } from './jwt-payload.interface'
 import { UserServiceProxy } from '../service-proxy/user-proxy'
 import { CreateTokenDto } from './auth.dto'
-import * as uuid from 'uuid'
+import * as uuid from 'uuid/v1'
 import { addHours, addMonths, compareAsc } from 'date-fns'
 import { logger } from '@utils/logger'
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userServiceProxy: UserServiceProxy, private readonly jwtService: JwtService) {}
+  constructor(private readonly userServiceProxy: UserServiceProxy) {}
 
   async createToken({ userName, password }: CreateTokenDto) {
     const [user] = await this.userServiceProxy.UserService.getMany({
@@ -36,29 +34,23 @@ export class AuthService {
       accessToken: {
         userId: user.id,
         scope: '',
-        accessToken: uuid.v4(),
+        accessToken: uuid(),
         accessTokenExpiresAt: addHours(new Date(), 2).toISOString(),
-        refreshToken: uuid.v4(),
+        refreshToken: uuid(),
         refreshTokenExpiresAt: addMonths(new Date(), 1).toISOString()
       }
     } as any)
 
-    const payload: JwtPayload = {
-      userId: user.id,
-      scope: accessToken.scope,
-      accessToken: accessToken.accessToken
-    }
-
     return {
       expiresIn: 2 * 60 * 60,
-      accessToken: this.jwtService.sign(payload)
+      accessToken: accessToken.accessToken
     }
   }
 
-  async validateUser(payload: JwtPayload): Promise<any> {
+  async validateToken(token: string): Promise<any> {
     try {
       const [accessToken] = await this.userServiceProxy.AccessTokenService.getMany({
-        filter: `accessToken||eq||${payload.accessToken}`,
+        filter: `accessToken||eq||${token}`,
         limit: 1
       } as any)
 
@@ -71,14 +63,18 @@ export class AuthService {
       }
 
       const user = await this.userServiceProxy.UserService.getOne({
-        id: payload.userId
+        id: accessToken.userId
       })
 
       if (!user) {
         throw new UnauthorizedException()
       }
 
-      return user
+      return {
+        id: user.id,
+        userName: user.userName,
+        nickName: user.nickName
+      }
     } catch (ex) {
       if (ex.status === 404) {
         logger.error(ex)

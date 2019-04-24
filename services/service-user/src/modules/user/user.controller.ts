@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common'
+import { Controller, Post, Body, UseGuards } from '@nestjs/common'
 import { ApiUseTags, ApiOperation } from '@nestjs/swagger'
 import { Crud } from '@nestjsx/crud'
 
@@ -6,6 +6,7 @@ import { User } from '../../entities/user.entity'
 import { UserService } from './user.service'
 import { GetPasswordHashDto, GenerateNickNameDto, GenerateSaltDto } from './user.dtos'
 import { makeRouteOperationId } from '@utils/typeorm'
+import { AuthGuard } from '@nestjs/passport'
 
 @ApiUseTags('User')
 @Crud(User, {
@@ -15,6 +16,7 @@ import { makeRouteOperationId } from '@utils/typeorm'
   }
 })
 @Controller('users')
+@UseGuards(AuthGuard('jwt'))
 export class UserController {
   constructor(public service: UserService) {}
 

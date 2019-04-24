@@ -1,4 +1,4 @@
-import * as uuid from 'uuid'
+import * as uuid from 'uuid/v1'
 import { IEvent } from './interfaces'
 
 export class EventBase implements IEvent {
@@ -9,7 +9,7 @@ export class EventBase implements IEvent {
   data: any
 
   constructor(eventName: string, aggregateId: string, data: any) {
-    this.id = uuid.v4()
+    this.id = uuid()
     this.timestamp = new Date()
 
     this.eventName = eventName
