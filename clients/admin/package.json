@@ -3,19 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "query-string": "^6.4.2",
+    "ra-language-chinese": "^2.0.5",
     "react": "^16.8.6",
-    "react-admin": "^2.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-admin": "^2.9.0",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@types/jest": "24.0.11",
-    "@types/node": "11.13.7",
-    "@types/react": "16.8.14",
-    "@types/react-dom": "16.8.4",
+    "@types/history": "^4.7.2",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.7",
+    "@types/react": "^16.8.14",
+    "@types/react-dom": "^16.8.4",
     "cross-env": "^5.2.0",
     "http-proxy-middleware": "^0.19.1",
-    "typescript": "3.4.5"
+    "react-scripts": "^3.0.0",
+    "typescript": "^3.4.5"
   },
   "scripts": {
     "start": "cross-env PORT=5000 react-scripts start",
