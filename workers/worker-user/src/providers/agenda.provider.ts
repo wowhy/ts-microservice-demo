@@ -24,35 +24,30 @@ async function stop() {
 export async function listen() {
   await agenda.start()
 
+  process.on('SIGTERM', stop)
+  process.on('SIGINT', stop)
+
   Object.keys(jobs).forEach(key => {
-    agenda.define(key, async job => {
+    agenda.define(key, async (job, done) => {
       try {
         await jobs[key](job.attrs.data)
+        done()
       } catch (ex) {
         logger.error(ex)
-        job.fail(ex)
-        await job.save()
+        done(ex)
       }
     })
   })
-
-  process.on('SIGTERM', stop)
-  process.on('SIGINT', stop)
 
   return new Promise((resolve, reject) => {
     // nothing
     logger.info('worker started')
   })
 }
-
 export function register(jobName, moduleRef: ModuleRef, type) {
   const handler = data => {
     moduleRef.get(type).handler(data)
   }
 
-  if (jobs[jobName]) {
-    jobs[jobName].push(handler)
-  } else {
-    jobs[jobName] = [handler]
-  }
+  jobs[jobName] = handler
 }
