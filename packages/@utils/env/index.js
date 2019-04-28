@@ -8,7 +8,7 @@ if (fs.existsSync(filename)) {
   const config = dotenv.parse(fs.readFileSync(filename))
 
   Object.keys(config).forEach(key => {
-    if (env[key] !== undefined) {
+    if (env[key] === undefined) {
       env[key] = config[key]
     }
   })
