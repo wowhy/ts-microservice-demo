@@ -5,7 +5,7 @@ import { User } from '../../entities/user.entity'
 
 import { UserController } from './user.controller'
 import { UserService } from './user.service'
-import { eventPublisherProvider } from '../../providers/event-publisher.provider'
+import { eventPublisherProvider } from '../../providers/event.publisher'
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],

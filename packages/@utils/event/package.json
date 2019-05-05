@@ -1,18 +1,23 @@
 {
   "name": "@utils/event",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "libs/index.js",
+  "typings": "libs/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf libs && tsc -p tsconfig.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "typings": "libs/index.d.ts",
   "dependencies": {
     "@utils/logger": "file:../logger",
     "kafka-node": "^4.0.4",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.0.10",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.5"
   }
 }

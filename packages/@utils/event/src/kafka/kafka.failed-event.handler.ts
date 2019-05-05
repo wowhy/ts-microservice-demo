@@ -1,15 +1,15 @@
-import { IEventPublisher, IEvent } from './interfaces'
+import { IFailedEventHandler } from '../interfaces'
 
-export class KafkaEventPublisher implements IEventPublisher {
+export class KafkaFailedEventHandler implements IFailedEventHandler {
   constructor(private KeyedMessage, private producer) {}
 
-  async publish(e: IEvent) {
+  async handle(message) {
     await new Promise((resolve, reject) => {
       this.producer.send(
         [
           {
-            topic: e.eventName,
-            messages: [new this.KeyedMessage(e.aggregateId, JSON.stringify(e))]
+            topic: `error.${message.topic}`,
+            messages: [new this.KeyedMessage(message.key, message.value)]
           }
         ],
         err => {

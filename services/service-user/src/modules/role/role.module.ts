@@ -5,7 +5,7 @@ import { Role } from '../../entities/role.entity'
 
 import { RoleController } from './role.controller'
 import { RoleService } from './role.service'
-import { eventPublisherProvider } from '../../providers/event-publisher.provider'
+import { eventPublisherProvider } from '../../providers/event.publisher'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Role])],

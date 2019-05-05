@@ -5,7 +5,7 @@ import { Crud } from '@nestjsx/crud'
 import { User } from '../../entities/user.entity'
 import { UserService } from './user.service'
 import { GetPasswordHashDto, GenerateNickNameDto, GenerateSaltDto } from './user.dtos'
-import { makeRouteOperationId } from '@utils/typeorm'
+import { makeRouteOperationId } from '@utils/typeorm/libs/utils'
 import { AuthGuard } from '@nestjs/passport'
 
 @ApiUseTags('User')

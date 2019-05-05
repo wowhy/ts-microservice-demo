@@ -4,7 +4,7 @@ import { Crud } from '@nestjsx/crud'
 
 import { Role } from '../../entities/role.entity'
 import { RoleService } from './role.service'
-import { makeRouteOperationId } from '@utils/typeorm'
+import { makeRouteOperationId } from '@utils/typeorm/libs/utils'
 
 @ApiUseTags('Role')
 @Crud(Role, {

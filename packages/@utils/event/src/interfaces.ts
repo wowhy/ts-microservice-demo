@@ -29,6 +29,6 @@ export interface IEventSubscriber {
   handle(e: IEvent): Promise<any>
 }
 
-export interface IMsgFailedHandler {
-  handle(message): Promise<void>
+export interface IFailedEventHandler {
+  handle(e: IEvent): Promise<void>
 }

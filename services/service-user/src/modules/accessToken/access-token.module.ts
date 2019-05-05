@@ -5,7 +5,7 @@ import { AccessToken } from '../../entities/access-token.entity'
 
 import { AccessTokenController } from './access-token.controller'
 import { AccessTokenService } from './access-token.service'
-import { eventPublisherProvider } from '../../providers/event-publisher.provider'
+import { eventPublisherProvider } from '../../providers/event.publisher'
 
 @Module({
   imports: [TypeOrmModule.forFeature([AccessToken])],

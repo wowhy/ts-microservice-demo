@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class KafkaMsgFailedHandler {
+class KafkaEventPublisher {
     constructor(KeyedMessage, producer) {
         this.KeyedMessage = KeyedMessage;
         this.producer = producer;
     }
-    async handle(message) {
+    async publish(e) {
         await new Promise((resolve, reject) => {
             this.producer.send([
                 {
-                    topic: `error.${message.topic}`,
-                    messages: [new this.KeyedMessage(message.key, message.value)]
+                    topic: e.eventName,
+                    messages: [new this.KeyedMessage(e.aggregateId, JSON.stringify(e))]
                 }
             ], err => {
                 if (err) {
@@ -23,5 +23,5 @@ class KafkaMsgFailedHandler {
         });
     }
 }
-exports.KafkaMsgFailedHandler = KafkaMsgFailedHandler;
-//# sourceMappingURL=kafka-msg-failed-handler.js.map
+exports.KafkaEventPublisher = KafkaEventPublisher;
+//# sourceMappingURL=kafka.publisher.js.map

@@ -26,4 +26,4 @@ class SimpleEventDispatcher {
     }
 }
 exports.SimpleEventDispatcher = SimpleEventDispatcher;
-//# sourceMappingURL=simple-event-dispatcher.js.map
+//# sourceMappingURL=simple.dispatcher.js.map

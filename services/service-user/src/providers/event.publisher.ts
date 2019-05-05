@@ -1,6 +1,6 @@
 import { KafkaClient, Producer, KeyedMessage } from 'kafka-node'
 
-import { KafkaEventPublisher } from '@utils/event'
+import { KafkaEventPublisher } from '@utils/event/libs/kafka'
 import { logger } from '@utils/logger'
 
 import { kafkaConfig } from '../config/kafka.config'
@@ -10,9 +10,14 @@ const producer = new Producer(client, {
   requireAcks: 1
 })
 
+client.on('close', () => {
+  logger.error('kafka client closed')
+  process.exit(0)
+})
+
 producer.on('error', err => {
   logger.error(err)
-  process.exit(1)
+  process.exit(0)
 })
 
 let publisher: KafkaEventPublisher

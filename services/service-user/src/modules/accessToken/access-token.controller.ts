@@ -4,7 +4,7 @@ import { Crud } from '@nestjsx/crud'
 
 import { AccessToken } from '../../entities/access-token.entity'
 import { AccessTokenService } from './access-token.service'
-import { makeRouteOperationId } from '@utils/typeorm'
+import { makeRouteOperationId } from '@utils/typeorm/libs/utils'
 
 @ApiUseTags('AccessToken')
 @Crud(AccessToken, {

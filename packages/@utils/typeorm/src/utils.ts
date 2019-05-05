@@ -1,6 +1,6 @@
-const ApiOperation = require('@nestjs/swagger').ApiOperation
+import { ApiOperation } from '@nestjs/swagger'
 
-exports.makeRouteOperationId = function(routes) {
+export function makeRouteOperationId(routes) {
   const operationIds = {
     getManyBase: 'getMany',
     getOneBase: 'getOne',
@@ -9,7 +9,6 @@ exports.makeRouteOperationId = function(routes) {
     updateOneBase: 'updateOne',
     deleteOneBase: 'deleteOne'
   }
-
   ;['getManyBase', 'getOneBase', 'createOneBase', 'createManyBase', 'updateOneBase', 'deleteOneBase'].forEach(
     key => {
       if (!routes[key]) {

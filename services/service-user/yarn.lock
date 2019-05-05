@@ -232,9 +232,9 @@
     dotenv "^7.0.0"
 
 "@utils/event@file:../../packages/@utils/event":
-  version "1.0.0"
+  version "1.0.1"
   dependencies:
-    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.0-265dbeca-2401-4cbd-8acf-796d92397775-1556085200735/node_modules/@utils/logger"
+    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.1-fd3689d3-fa0b-47b5-9511-ad8b6a05f5d1-1557048545532/node_modules/@utils/logger"
     kafka-node "^4.0.4"
     uuid "^3.3.2"
 
@@ -244,7 +244,7 @@
     log4js "^4.1.0"
 
 "@utils/typeorm@file:../../packages/@utils/typeorm":
-  version "1.0.2"
+  version "1.0.3"
   dependencies:
     "@nestjs/common" "^6.0.5"
     "@nestjs/core" "^6.0.5"

@@ -1,12 +1,12 @@
 import { logger } from '@utils/logger'
 
-import { IEventDispatcher, IEvent, IEventSubscriber, IMsgFailedHandler } from './interfaces'
+import { IEventDispatcher, IEvent, IEventSubscriber, IFailedEventHandler } from '../interfaces'
 
 export class KafkaEventSubscriber implements IEventSubscriber {
   constructor(
     private consumer,
     private dispatcher: IEventDispatcher,
-    private msgFailedHandler: IMsgFailedHandler
+    private failedEventHandler: IFailedEventHandler
   ) {}
 
   async subscribe() {
@@ -29,7 +29,7 @@ export class KafkaEventSubscriber implements IEventSubscriber {
             if (i === retries - 1) {
               try {
                 // 处理错误消息
-                await this.msgFailedHandler.handle(message)
+                await this.failedEventHandler.handle(message)
               } catch (exAgain) {
                 logger.error(exAgain)
                 this.consumer.client.close()

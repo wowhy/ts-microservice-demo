@@ -1,7 +1,8 @@
 import { KafkaClient, ConsumerGroup, KeyedMessage, Producer } from 'kafka-node'
 import { ModuleRef } from '@nestjs/core'
 
-import { SimpleEventDispatcher, KafkaEventSubscriber, KafkaMsgFailedHandler } from '@utils/event'
+import { SimpleEventDispatcher } from '@utils/event'
+import { KafkaEventSubscriber, KafkaFailedEventHandler } from '@utils/event/libs/kafka'
 import { logger } from '@utils/logger'
 
 import { kafkaConfig, topics, consumerConfig } from '../config/kafka.config'
@@ -31,8 +32,10 @@ export function listen(): Promise<void> {
         )
       })
 
-      client.on('error', reject)
-      client.on('close', resolve)
+      client.on('close', () => {
+        logger.error('kafka client closed')
+        stop()
+      })
 
       process.on('SIGTERM', stop)
       process.on('SIGINT', stop)
@@ -68,7 +71,7 @@ function receiveMsg() {
   const subscriber = new KafkaEventSubscriber(
     consumer,
     dispatcher,
-    new KafkaMsgFailedHandler(
+    new KafkaFailedEventHandler(
       KeyedMessage,
       new Producer(client, {
         requireAcks: 1

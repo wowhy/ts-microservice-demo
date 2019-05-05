@@ -1,5 +1,5 @@
-import { IMsgFailedHandler } from './interfaces';
-export declare class KafkaMsgFailedHandler implements IMsgFailedHandler {
+import { IFailedEventHandler } from '../interfaces';
+export declare class KafkaFailedEventHandler implements IFailedEventHandler {
     private KeyedMessage;
     private producer;
     constructor(KeyedMessage: any, producer: any);

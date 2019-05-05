@@ -1,14 +1,12 @@
 {
   "name": "@utils/typeorm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "libs/index.js",
+  "typings": "libs/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf libs && tsc -p tsconfig.json"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
@@ -18,5 +16,9 @@
     "typeorm": "^0.2.16",
     "uuid": "^3.3.2"
   },
-  "typings": "index.d.ts"
+  "devDependencies": {
+    "@types/ioredis": "^4.0.10",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.5"
+  }
 }

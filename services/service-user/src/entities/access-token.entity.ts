@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger'
-import { Entity, Column, ManyToMany } from 'typeorm'
+import { Entity, Column } from 'typeorm'
 
 import { BaseEntity } from '@utils/typeorm'
 

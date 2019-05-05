@@ -12,7 +12,7 @@ spec:
   ports:
     - name: tcp
       protocol: TCP
-      port: 5433
+      port: 5432
       targetPort: 5432
 ---
 apiVersion: extensions/v1beta1

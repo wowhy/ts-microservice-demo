@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common'
 import { ModuleRef } from '@nestjs/core'
-import { register } from '../../providers/kafka.provider'
+import { register } from '../../providers/event.subscriber'
 import { UserCreatedHandler } from './user-created.handler'
 
 @Module({

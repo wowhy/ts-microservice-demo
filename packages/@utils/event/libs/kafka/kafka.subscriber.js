@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const logger_1 = require("@utils/logger");
 class KafkaEventSubscriber {
-    constructor(consumer, dispatcher, msgFailedHandler) {
+    constructor(consumer, dispatcher, failedEventHandler) {
         this.consumer = consumer;
         this.dispatcher = dispatcher;
-        this.msgFailedHandler = msgFailedHandler;
+        this.failedEventHandler = failedEventHandler;
     }
     async subscribe() {
         this.consumer.on('message', async (message) => {
@@ -23,7 +23,7 @@ class KafkaEventSubscriber {
                         logger_1.logger.error(`event retrie ${i + 1}`, ex);
                         if (i === retries - 1) {
                             try {
-                                await this.msgFailedHandler.handle(message);
+                                await this.failedEventHandler.handle(message);
                             }
                             catch (exAgain) {
                                 logger_1.logger.error(exAgain);
@@ -70,4 +70,4 @@ function parseValue(val) {
         };
     }
 }
-//# sourceMappingURL=kafka-event-subscriber.js.map
+//# sourceMappingURL=kafka.subscriber.js.map
