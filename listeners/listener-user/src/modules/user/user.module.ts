@@ -1,15 +1,19 @@
 import { Module, OnModuleInit } from '@nestjs/common'
 import { ModuleRef } from '@nestjs/core'
 import { register } from '../../providers/event.subscriber'
-import { UserCreatedHandler } from './user-created.handler'
+import { loadHandlers } from '../../utils/handler'
+
+const handlers = loadHandlers(__dirname)
 
 @Module({
-  providers: [UserCreatedHandler]
+  providers: [...handlers]
 })
 export class UserModule implements OnModuleInit {
   constructor(private readonly moduleRef: ModuleRef) {}
 
   onModuleInit() {
-    register(UserCreatedHandler.topic, this.moduleRef, UserCreatedHandler)
+    handlers.forEach(handler => {
+      register(handler.topic, this.moduleRef, handler)
+    })
   }
 }
