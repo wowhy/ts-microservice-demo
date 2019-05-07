@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper
+  namespace: ts-microservice-demo
+  labels:
+    app: zookeeper
+spec:
+  type: LoadBalancer
+  selector:
+    app: zookeeper
+  ports:
+    - name: tcp
+      protocol: TCP
+      port: 2181
+      targetPort: 2181
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: zookeeper
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      containers:
+        - name: zookeeper 
+          image: wurstmeister/zookeeper
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 2181
