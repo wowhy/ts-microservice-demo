@@ -16,7 +16,6 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@types/ioredis": "^4.0.10",
     "rimraf": "^2.6.3",
     "typescript": "^3.4.5"
   }

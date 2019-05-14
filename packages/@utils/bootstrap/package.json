@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "typings": "index.d.ts",
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -16,6 +14,5 @@
     "@nestjs/platform-fastify": "^6.0.0",
     "fastify-swagger": "^2.3.2",
     "rxjs": "^6.4.0"
-  },
-  "peerDependencies": {}
+  }
 }
