@@ -1,10 +1,15 @@
 FROM node:alpine
 
+RUN apk add make gcc g++ python\
+  && npm config set registry https://registry.npm.taobao.org\
+  && npm install -g yarn\
+  && yarn config set registry https://registry.npm.taobao.org
+
 WORKDIR /app/scheduler
 COPY ./packages /app/packages
 COPY ./scheduler/package.json /app/scheduler
 
-RUN npm config set registry https://registry.npm.taobao.org && npm install -g yarn && yarn
+RUN yarn
 
 COPY . /app
 

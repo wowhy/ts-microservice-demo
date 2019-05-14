@@ -1,0 +1,176 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-auth
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-auth
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/api-auth
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-app
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-app
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/api-app
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8001
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-admin
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-admin
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/api-admin
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8002
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: scheduler
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: scheduler
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/scheduler
+          imagePullPolicy: IfNotPresent
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: service-user
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-user
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/service-user
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: listener-user
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: listener-user
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/listener-user
+          imagePullPolicy: IfNotPresent
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: worker-user
+  namespace: ts-microservice-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: worker-user
+    spec:
+      containers:
+        - name:
+          image: ts-microservice-demo/worker-user
+          imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-auth
+  namespace: ts-microservice-demo
+  labels:
+    app: api-auth
+spec:
+  type: LoadBalancer
+  selector:
+    app: api-auth
+  ports:
+    - name: tcp
+      port: 8000
+      targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-app
+  namespace: ts-microservice-demo
+  labels:
+    app: api-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: api-app
+  ports:
+    - name: tcp
+      port: 8001
+      targetPort: 8001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-admin
+  namespace: ts-microservice-demo
+  labels:
+    app: api-admin
+spec:
+  type: LoadBalancer
+  selector:
+    app: api-admin
+  ports:
+    - name: tcp
+      port: 8002
+      targetPort: 8002
+---
+
