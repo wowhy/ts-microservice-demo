@@ -1,0 +1,1 @@
+openssl req -x509 -nodes -days 3650 -newkey rsa:1024 -keyout private.key -out public.crt

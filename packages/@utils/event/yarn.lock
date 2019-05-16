@@ -2,18 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/ioredis@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.npm.taobao.org/@types/ioredis/download/@types/ioredis-4.0.10.tgz#ca8bd95ca7d5fee32cbc5a0bf92fc29264bee237"
-  integrity sha1-yovZXKfV/uMsvFoL+S/CkmS+4jc=
-  dependencies:
-    "@types/node" "*"
-
-"@types/node@*":
-  version "12.0.0"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
-  integrity sha1-0RgTucD/iqyinwTLwSgX9MfWVuU=
-
 "@utils/logger@file:../logger":
   version "1.0.0"
   dependencies:
@@ -337,7 +325,7 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-kafka-node@^4.0.4:
+kafka-node@^4.1.3:
   version "4.1.3"
   resolved "https://registry.npm.taobao.org/kafka-node/download/kafka-node-4.1.3.tgz#9e5fdf3a5562370ff0f82c5481bd14a6e39ad93d"
   integrity sha1-nl/fOlViNw/w+CxUgb0UpuOa2T0=
@@ -722,9 +710,14 @@ util-deprecate@~1.0.1:
   resolved "https://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-uuid@^3.0.0, uuid@^3.3.2:
+uuid@^3.0.0:
   version "3.3.2"
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
+
+uuid@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
 
 which-pm-runs@^1.0.0:

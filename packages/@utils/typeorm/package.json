@@ -8,12 +8,12 @@
     "build": "rimraf libs && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@nestjs/common": "^6.0.5",
-    "@nestjs/core": "^6.0.5",
+    "@nestjs/common": "^6.2.0",
+    "@nestjs/core": "^6.2.0",
     "@nestjs/swagger": "^3.0.2",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.4.0",
-    "typeorm": "^0.2.16",
+    "rxjs": "^6.5.2",
+    "typeorm": "^0.2.17",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

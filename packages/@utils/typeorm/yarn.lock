@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@nestjs/common@^6.0.5":
-  version "6.1.1"
-  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.1.1.tgz#6f7f0aa0ff45285f9d2b0a66acde1ebeb0c99060"
-  integrity sha1-b38KoP9FKF+dKwpmrN4evrDJkGA=
+"@nestjs/common@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.2.0.tgz#edc59fa0b42c5d7b96e88bdc3c52012780758da3"
+  integrity sha1-7cWfoLQsXXuW6IvcPFIBJ4B1jaM=
   dependencies:
     axios "0.18.0"
     cli-color "1.4.0"
     uuid "3.3.2"
 
-"@nestjs/core@^6.0.5":
-  version "6.1.1"
-  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.1.1.tgz#10494e8e1a4bcf55059fd114c0934186c2130930"
-  integrity sha1-EElOjhpLz1UFn9EUwJNBhsITCTA=
+"@nestjs/core@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.2.0.tgz#cf716a5b86357a94ddd0419a3560c181d333334e"
+  integrity sha1-z3FqW4Y1epTd0EGaNWDBgdMzM04=
   dependencies:
     "@nuxtjs/opencollective" "0.2.1"
     fast-safe-stringify "2.0.6"
@@ -720,10 +720,10 @@ rimraf@^2.6.3:
   dependencies:
     glob "^7.1.3"
 
-rxjs@^6.4.0:
-  version "6.5.1"
-  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.5.1.tgz#f7a005a9386361921b8524f38f54cbf80e5d08f4"
-  integrity sha1-96AFqThjYZIbhSTzj1TL+A5dCPQ=
+rxjs@^6.5.2:
+  version "6.5.2"
+  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
+  integrity sha1-LjXOgVzUbYTQKiCftOWSHgUdvsc=
   dependencies:
     tslib "^1.9.0"
 
