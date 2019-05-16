@@ -15,26 +15,26 @@
     "test:cov": "cross-env NODE_ENV=development jest --coverage"
   },
   "dependencies": {
-    "@nestjs/common": "^6.0.5",
-    "@nestjs/core": "^6.0.5",
+    "@nestjs/common": "^6.2.0",
+    "@nestjs/core": "^6.2.0",
     "@utils/env": "file:../../packages/@utils/env",
     "@utils/logger": "file:../../packages/@utils/logger",
     "agenda": "^2.0.2",
     "cross-env": "^5.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.4.0"
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.2.0",
     "@types/agenda": "^2.0.4",
     "@types/jest": "^24.0.13",
-    "@types/node": "^11.12.2",
+    "@types/node": "^12.0.2",
     "jest": "^24.8.0",
-    "nodemon": "^1.18.3",
-    "prettier": "^1.14.2",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
-    "ts-loader": "^5.3.3",
+    "ts-loader": "^6.0.0",
     "ts-node": "^8.0.3",
     "tsconfig-paths": "^3.5.0",
     "tslint": "^5.14.0",
