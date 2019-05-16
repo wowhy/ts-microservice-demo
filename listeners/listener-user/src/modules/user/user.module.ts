@@ -13,7 +13,7 @@ export class UserModule implements OnModuleInit {
 
   onModuleInit() {
     handlers.forEach(handler => {
-      register(handler.topic, this.moduleRef, handler)
+      register(handler.eventName, this.moduleRef, handler)
     })
   }
 }

@@ -1,9 +1,9 @@
-import { KafkaClient, Producer, KeyedMessage } from 'kafka-node'
+import { KafkaClient, Producer } from 'kafka-node'
 
 import { KafkaEventPublisher } from '@utils/event/libs/kafka'
 import { logger } from '@utils/logger'
 
-import { kafkaConfig } from '../config/kafka.config'
+import { kafkaConfig, topic } from '../config/kafka.config'
 
 const client = new KafkaClient(kafkaConfig)
 const producer = new Producer(client, {
@@ -21,18 +21,50 @@ producer.on('error', err => {
 })
 
 let publisher: KafkaEventPublisher
+let promise
 
 export const eventPublisherProvider = {
   provide: 'eventPublisher',
   useFactory: async () => {
     if (!publisher) {
-      publisher = await new Promise((resolve, reject) => {
+      if (promise) {
+        return promise
+      }
+
+      promise = new Promise((resolve, reject) => {
         producer.on('ready', () => {
-          resolve(new KafkaEventPublisher(KeyedMessage, producer))
+          ensureTopics().then(() => {
+            resolve(new KafkaEventPublisher(topic, producer))
+          }, reject)
         })
       })
+
+      publisher = await promise
     }
 
     return publisher
   }
+}
+
+function ensureTopics() {
+  logger.debug('ensureTopics', topic)
+
+  return new Promise((resolve, reject) => {
+    client.createTopics(
+      [
+        {
+          topic,
+          partitions: 1,
+          replicationFactor: 1
+        }
+      ],
+      (err, result) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve()
+        }
+      }
+    )
+  })
 }

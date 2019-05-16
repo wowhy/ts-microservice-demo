@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 123456
     ports:
-      - '5433:5432'
+      - '5432:5432'
     volumes:
       - postgres:/var/lib/postgresql/data
   mongodb:
@@ -21,9 +21,8 @@ services:
   redis:
     container_name: ts_microservice_redis
     image: redis
-    ports: 
+    ports:
       - '6379:6379'
-
 
   zookeeper:
     container_name: ts_microservice_zookeeper
@@ -36,8 +35,6 @@ services:
     image: wurstmeister/kafka
     ports:
       - '9092:9092'
-    expose:
-      - '9093'
     environment:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       # HOSTNAME_COMMAND: "docker info | grep ^Name: | cut -d' ' -f 2"

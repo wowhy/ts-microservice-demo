@@ -441,9 +441,9 @@
     dotenv "^8.0.0"
 
 "@utils/event@file:../../packages/@utils/event":
-  version "1.0.1"
+  version "1.0.2"
   dependencies:
-    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.1-aed3d73a-1b9d-48be-bccc-837605e90ac8-1557976871429/node_modules/@utils/logger"
+    "@utils/logger" "file:../../../../../../Library/Caches/Yarn/v4/npm-@utils-event-1.0.2-4812d175-5021-4905-925f-f95df78cb667-1557978534480/node_modules/@utils/logger"
     kafka-node "^4.1.3"
     uuid "^3.3.2"
 

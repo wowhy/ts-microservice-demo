@@ -7,3 +7,5 @@ export const kafkaConfig: KafkaClientOptions = {
   reconnectOnIdle: true,
   idleConnection: 10
 }
+
+export const topic = 'user.event'

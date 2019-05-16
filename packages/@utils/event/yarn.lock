@@ -2,10 +2,15 @@
 # yarn lockfile v1
 
 
+"@types/node@^12.0.2":
+  version "12.0.2"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
+  integrity sha1-NFKiTt+f6hOLSPrUoKAopoPaHkA=
+
 "@utils/logger@file:../logger":
   version "1.0.0"
   dependencies:
-    log4js "^4.1.0"
+    log4js "^4.2.0"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -30,7 +35,7 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
-async@^2.6.1, async@^2.6.2:
+async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npm.taobao.org/async/download/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
   integrity sha1-GDMOp+bjE4h/XS8qkEusb+TdU4E=
@@ -160,9 +165,9 @@ debug@^2.1.3:
   dependencies:
     ms "2.0.0"
 
-debug@^3.1.0:
+debug@^3.2.6:
   version "3.2.6"
-  resolved "https://registry.npm.taobao.org/debug/download/debug-3.2.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  resolved "https://registry.npm.taobao.org/debug/download/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha1-6D0X3hbYp++3cX7b5fsQE17uYps=
   dependencies:
     ms "^2.1.1"
@@ -228,7 +233,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.npm.taobao.org/fs-constants/download/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha1-a+Dem+mYzhavivwkSXue6bfM2a0=
 
-fs-extra@^7.0.0:
+fs-extra@^7.0.1:
   version "7.0.1"
   resolved "https://registry.npm.taobao.org/fs-extra/download/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
   integrity sha1-TxicRKoSO4lfcigE9V6iPq3DSOk=
@@ -346,21 +351,21 @@ kafka-node@^4.1.3:
   optionalDependencies:
     snappy "^6.0.1"
 
-lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4:
+lodash@^4.17.11, lodash@^4.17.4:
   version "4.17.11"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
 
-log4js@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npm.taobao.org/log4js/download/log4js-4.1.0.tgz#57983c6a443546a8c8607e9cb045d2a117c27644"
-  integrity sha1-V5g8akQ1RqjIYH6csEXSoRfCdkQ=
+log4js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npm.taobao.org/log4js/download/log4js-4.2.0.tgz#659a91d9522053b1e1d0ba89adf81c2005b8a993"
+  integrity sha1-ZZqR2VIgU7Hh0LqJrfgcIAW4qZM=
   dependencies:
     date-format "^2.0.0"
     debug "^4.1.1"
     flatted "^2.0.0"
     rfdc "^1.1.2"
-    streamroller "^1.0.4"
+    streamroller "^1.0.5"
 
 long@1.1.2:
   version "1.1.2"
@@ -601,16 +606,16 @@ snappy@^6.0.1:
     nan "^2.12.1"
     prebuild-install "^5.2.2"
 
-streamroller@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/streamroller/download/streamroller-1.0.4.tgz#d485c7624796d5e2eb34190c79afcbf006afb5e6"
-  integrity sha1-1IXHYkeW1eLrNBkMea/L8AavteY=
+streamroller@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/streamroller/download/streamroller-1.0.5.tgz#71660c20b06b1a7b204d46085731ad13c10a562d"
+  integrity sha1-cWYMILBrGnsgTUYIVzGtE8EKVi0=
   dependencies:
-    async "^2.6.1"
+    async "^2.6.2"
     date-format "^2.0.0"
-    debug "^3.1.0"
-    fs-extra "^7.0.0"
-    lodash "^4.17.10"
+    debug "^3.2.6"
+    fs-extra "^7.0.1"
+    lodash "^4.17.11"
 
 string-width@^1.0.1:
   version "1.0.2"
@@ -710,14 +715,9 @@ util-deprecate@~1.0.1:
   resolved "https://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-uuid@^3.0.0:
+uuid@^3.0.0, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
-  integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
-
-uuid@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
 
 which-pm-runs@^1.0.0:

@@ -1,7 +1,8 @@
+import { Producer } from 'kafka-node';
 import { IEventPublisher, IEvent } from '../interfaces';
 export declare class KafkaEventPublisher implements IEventPublisher {
-    private KeyedMessage;
+    private topic;
     private producer;
-    constructor(KeyedMessage: any, producer: any);
+    constructor(topic: string, producer: Producer);
     publish(e: IEvent): Promise<void>;
 }

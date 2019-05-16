@@ -10,8 +10,8 @@ import { kafkaConfig, topics, consumerConfig } from '../config/kafka.config'
 const client = new KafkaClient(kafkaConfig)
 const dispatcher = new SimpleEventDispatcher()
 
-export function register(topic, moduleRef: ModuleRef, type) {
-  dispatcher.register(topic, {
+export function register(eventName, moduleRef: ModuleRef, type) {
+  dispatcher.register(eventName, {
     moduleRef,
     type
   })
