@@ -10,10 +10,10 @@ const producer = new Producer(client, {
   requireAcks: 1
 })
 
-client.on('close', () => {
-  logger.error('kafka client closed')
-  process.exit(0)
-})
+// client.on('close', () => {
+//   logger.error('kafka client closed')
+//   process.exit(0)
+// })
 
 producer.on('error', err => {
   logger.error(err)
