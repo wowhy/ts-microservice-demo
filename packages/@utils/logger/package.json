@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "log4js": "^4.2.0"
+    "log4js": "^4.3.1"
   },
   "devDependencies": {
     "@types/log4js": "^2.3.5"

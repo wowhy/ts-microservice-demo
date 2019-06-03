@@ -15,8 +15,8 @@
     "test:cov": "cross-env NODE_ENV=development jest --coverage"
   },
   "dependencies": {
-    "@nestjs/common": "^6.2.0",
-    "@nestjs/core": "^6.2.0",
+    "@nestjs/common": "^6.2.4",
+    "@nestjs/core": "^6.2.4",
     "@utils/env": "file:../../packages/@utils/env",
     "@utils/logger": "file:../../packages/@utils/logger",
     "agenda": "^2.0.2",
@@ -26,19 +26,19 @@
     "rxjs": "^6.5.2"
   },
   "devDependencies": {
-    "@nestjs/testing": "^6.2.0",
+    "@nestjs/testing": "^6.2.4",
     "@types/agenda": "^2.0.4",
     "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.2",
+    "@types/node": "^12.0.4",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.0",
+    "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
-    "ts-loader": "^6.0.0",
-    "ts-node": "^8.0.3",
+    "ts-loader": "^6.0.2",
+    "ts-node": "^8.2.0",
     "tsconfig-paths": "^3.5.0",
-    "tslint": "^5.14.0",
-    "typescript": "^3.4.1"
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   },
   "jest": {
     "moduleFileExtensions": [

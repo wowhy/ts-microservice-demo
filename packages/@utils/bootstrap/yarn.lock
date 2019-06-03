@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@nestjs/common@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.2.0.tgz#edc59fa0b42c5d7b96e88bdc3c52012780758da3"
-  integrity sha1-7cWfoLQsXXuW6IvcPFIBJ4B1jaM=
+"@nestjs/common@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.2.4.tgz#ee6ff8b07494ce7242b1e61fb7fae9f64ec963d6"
+  integrity sha1-7m/4sHSUznJCseYft/rp9k7JY9Y=
   dependencies:
     axios "0.18.0"
     cli-color "1.4.0"
     uuid "3.3.2"
 
-"@nestjs/core@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.2.0.tgz#cf716a5b86357a94ddd0419a3560c181d333334e"
-  integrity sha1-z3FqW4Y1epTd0EGaNWDBgdMzM04=
+"@nestjs/core@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.2.4.tgz#ab2436ebfee356ae4ac66f19378f8ed57ac2c3c9"
+  integrity sha1-qyQ26/7jVq5Kxm8ZN4+O1XrCw8k=
   dependencies:
     "@nuxtjs/opencollective" "0.2.1"
     fast-safe-stringify "2.0.6"
@@ -23,10 +23,10 @@
     optional "0.1.4"
     uuid "3.3.2"
 
-"@nestjs/platform-fastify@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/@nestjs/platform-fastify/download/@nestjs/platform-fastify-6.2.0.tgz#ac23be4ba136c7b6d4da44d7753ed4cf9e037c14"
-  integrity sha1-rCO+S6E2x7bU2kTXdT7Uz54DfBQ=
+"@nestjs/platform-fastify@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.npm.taobao.org/@nestjs/platform-fastify/download/@nestjs/platform-fastify-6.2.4.tgz#b5bcbba14e73ad7b1738a69dda9bf09a98ee1fc8"
+  integrity sha1-tby7oU5zrXsXOKad2pvwmpjuH8g=
   dependencies:
     fastify "2.3.0"
     fastify-cors "2.1.3"

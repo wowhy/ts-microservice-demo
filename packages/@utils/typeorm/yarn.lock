@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@nestjs/common@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.2.0.tgz#edc59fa0b42c5d7b96e88bdc3c52012780758da3"
-  integrity sha1-7cWfoLQsXXuW6IvcPFIBJ4B1jaM=
+"@nestjs/common@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.npm.taobao.org/@nestjs/common/download/@nestjs/common-6.2.4.tgz#ee6ff8b07494ce7242b1e61fb7fae9f64ec963d6"
+  integrity sha1-7m/4sHSUznJCseYft/rp9k7JY9Y=
   dependencies:
     axios "0.18.0"
     cli-color "1.4.0"
     uuid "3.3.2"
 
-"@nestjs/core@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.2.0.tgz#cf716a5b86357a94ddd0419a3560c181d333334e"
-  integrity sha1-z3FqW4Y1epTd0EGaNWDBgdMzM04=
+"@nestjs/core@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.npm.taobao.org/@nestjs/core/download/@nestjs/core-6.2.4.tgz#ab2436ebfee356ae4ac66f19378f8ed57ac2c3c9"
+  integrity sha1-qyQ26/7jVq5Kxm8ZN4+O1XrCw8k=
   dependencies:
     "@nuxtjs/opencollective" "0.2.1"
     fast-safe-stringify "2.0.6"
@@ -40,10 +40,10 @@
     consola "^2.3.0"
     node-fetch "^2.3.0"
 
-"@types/ioredis@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.npm.taobao.org/@types/ioredis/download/@types/ioredis-4.0.10.tgz#ca8bd95ca7d5fee32cbc5a0bf92fc29264bee237"
-  integrity sha1-yovZXKfV/uMsvFoL+S/CkmS+4jc=
+"@types/ioredis@^4.0.11":
+  version "4.0.11"
+  resolved "https://registry.npm.taobao.org/@types/ioredis/download/@types/ioredis-4.0.11.tgz#4acf9d7912944bcf1e96dd6adba2f16c07ed9ae7"
+  integrity sha1-Ss+deRKUS88elt1q26LxbAftmuc=
   dependencies:
     "@types/node" "*"
 
@@ -855,7 +855,7 @@ tslib@^1.9.0:
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha1-1+TdeSRdhUKMTX5IIqeZF5VMooY=
 
-typeorm@^0.2.16:
+typeorm@^0.2.17:
   version "0.2.17"
   resolved "https://registry.npm.taobao.org/typeorm/download/typeorm-0.2.17.tgz#eb98e9eeb2ce0dfc884620f49de0aeca3dc4e027"
   integrity sha1-65jp7rLODfyIRiD0neCuyj3E4Cc=
@@ -875,10 +875,10 @@ typeorm@^0.2.16:
     yargonaut "^1.1.2"
     yargs "^13.2.1"
 
-typescript@^3.4.5:
-  version "3.4.5"
-  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-  integrity sha1-LSYY0Qu1ZlcrjXqtUYDYQlfXCpk=
+typescript@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.5.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.5.1.tgz#ba72a6a600b2158139c5dd8850f700e231464202"
+  integrity sha1-unKmpgCyFYE5xd2IUPcA4jFGQgI=
 
 uuid@3.3.2, uuid@^3.3.2:
   version "3.3.2"

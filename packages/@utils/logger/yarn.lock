@@ -66,10 +66,21 @@ lodash@^4.17.11:
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
 
-log4js@*, log4js@^4.2.0:
+log4js@*:
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/log4js/download/log4js-4.2.0.tgz#659a91d9522053b1e1d0ba89adf81c2005b8a993"
   integrity sha1-ZZqR2VIgU7Hh0LqJrfgcIAW4qZM=
+  dependencies:
+    date-format "^2.0.0"
+    debug "^4.1.1"
+    flatted "^2.0.0"
+    rfdc "^1.1.2"
+    streamroller "^1.0.5"
+
+log4js@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.npm.taobao.org/log4js/download/log4js-4.3.1.tgz#026cb6fb3cd5b9c4682a96478c356c97b497686e"
+  integrity sha1-Amy2+zzVucRoKpZHjDVsl7SXaG4=
   dependencies:
     date-format "^2.0.0"
     debug "^4.1.1"
